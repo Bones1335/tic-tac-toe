@@ -7,3 +7,23 @@
 h1 {
     color: hotpink;
 }
+
+#gameboard {
+    display: grid;
+    width: 500px;
+    height: 500px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    border: 2px solid hotpink;
+    
+}
+
+.board {
+    display: grid;
+    border: 2px solid hotpink;
+    place-items: center;
+}
+
+p {
+    font-size: 100px;
+}
