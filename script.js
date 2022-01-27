@@ -13,7 +13,7 @@ const gameBoard = (() => {
             });
     };
 
-    const clearBoard = _board => {
+    const clearBoard = () => {
         _board = ['', '', '',
                   '', '', '',
                   '', '', ''];
