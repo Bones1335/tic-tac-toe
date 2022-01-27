@@ -36,6 +36,11 @@ const gameBoard = (() => {
 const gameFlow = (() => {
     const gameStart = document.querySelector('#start-button');
         gameStart.addEventListener('click', () => gameBoard.createBoard());
+    const gameRestart = document.querySelector('#restart-button');
+        gameRestart.addEventListener('click', () => {
+            gameBoard.clearBoard();
+            gameBoard.createBoard();
+        });
         
     const player1 = 'George';
     const player2 = 'Jack';
