@@ -4,6 +4,15 @@ const gameBoard = (() => {
                  'X', 'X', 'O',
                  'O', 'O', 'X'];
     const getBoard = () => _board;
+    
+    const createBoard = () => {
+       const storedBoard = getBoard();
+            storedBoard.forEach((item, index) => {
+                const squareSelect = document.querySelector(`[data-index='${index}']`);
+                    squareSelect.textContent = item; 
+            });
+    };
+
     const clearBoard = _board => {
         _board = ['', '', '',
                   '', '', '',
@@ -11,6 +20,7 @@ const gameBoard = (() => {
     };
     return {
         getBoard,
+        createBoard,
         clearBoard
     };
 })();
