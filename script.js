@@ -1,3 +1,21 @@
+// Player Factory Function
+const Player = (name) => {
+    const getName = () => name;
+    const iconSelection = icon => {
+        let player1 = '';
+        let player2 = '';        
+        if (icon === 'X') {
+            player1 = 'X';
+            player2 = 'O';
+        } else if (icon === 'O') {
+            player1 = 'O';
+            player2 = 'X';
+        }
+    };
+    
+    return {getName, iconSelection}
+};
+
 // gameBoard Module
 const gameBoard = (() => {
     let _board = ['O', 'X', 'X',
@@ -25,21 +43,14 @@ const gameBoard = (() => {
     };
 })();
 
-// Player Factory Function
+// Game Flow Module
+const gameFlow = (() => {
+    const player1 = 'George';
+    const player2 = 'Jack';
 
-const Player = (name) => {
-    const getName = () => name;
-    const iconSelection = icon => {
-        let player1 = '';
-        let player2 = '';        
-        if (icon === 'X') {
-            player1 = 'X';
-            player2 = 'O';
-        } else if (icon === 'O') {
-            player1 = 'O';
-            player2 = 'X';
-        }
+
+    return {
+        player1,
+        player2
     };
-    
-    return {getName, iconSelection}
-};
+})();
