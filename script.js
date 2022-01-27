@@ -1,19 +1,8 @@
 // Player Factory Function
 const Player = (name) => {
     const getName = () => name;
-    const iconSelection = icon => {
-        let player1 = '';
-        let player2 = '';        
-        if (icon === 'X') {
-            player1 = 'X';
-            player2 = 'O';
-        } else if (icon === 'O') {
-            player1 = 'O';
-            player2 = 'X';
-        }
-    };
     
-    return {getName, iconSelection}
+    return {getName}
 };
 
 // gameBoard Module
@@ -45,6 +34,9 @@ const gameBoard = (() => {
 
 // Game Flow Module
 const gameFlow = (() => {
+    const gameStart = document.querySelector('#start-button');
+        gameStart.addEventListener('click', () => gameBoard.createBoard());
+        
     const player1 = 'George';
     const player2 = 'Jack';
 
