@@ -9,14 +9,15 @@ const Player = (name, icon) => {
 // gameBoard Module
 const gameBoard = (() => {
     let _board = ['O', 'X', 'X',
-                 'X', 'X', 'O',
-                 'O', 'O', 'X'];
+                  'X', 'X', 'O',
+                  'O', 'O', 'X'];
     const getBoard = () => _board;
     
     const createBoard = () => {
        const storedBoard = getBoard();
             storedBoard.forEach((item, index) => {
                 const squareSelect = document.querySelector(`[data-index='${index}']`);
+                    squareSelect.addEventListener('click', () => console.log(gameFlow.player1Icon));
                     squareSelect.textContent = item; 
             });
     };
@@ -26,6 +27,14 @@ const gameBoard = (() => {
                   '', '', '',
                   '', '', ''];
     };
+
+    //const selectSquare = document.querySelectorAll('.board');
+    //    selectSquare.forEach((div) => div.addEventListener('click', () => {
+    //        // add game input function here
+    //        getBoard().push(gameFlow.player1Icon)
+    //        console.log(getBoard())
+    //        }));
+
     return {
         getBoard,
         createBoard,
@@ -61,9 +70,10 @@ const gameFlow = (() => {
             player2Name.textContent = p2.getName();
         });
 
+    
 
     return {
-        player1,
-        player2
+        player1Icon,
+        player2Icon
     };
 })();
