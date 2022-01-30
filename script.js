@@ -1,8 +1,9 @@
 // Player Factory Function
-const Player = (name) => {
+const Player = (name, icon) => {
     const getName = () => name;
-    
-    return {getName}
+    const getIcon = () => icon;
+
+    return {getName, getIcon}
 };
 
 // gameBoard Module
@@ -47,8 +48,8 @@ const gameFlow = (() => {
     const player1Input = document.querySelector('#player1');
     const player1 = document.querySelector('#player1-button');
         player1.addEventListener('click', () => {
-            const p1Name = Player(player1Input.value);
-            player1Name.textContent = p1Name.getName()
+            const p1 = Player(player1Input.value, player1Icon);
+            player1Name.textContent = p1.getName()
         });
     
     const player2Icon = 'O';
@@ -56,8 +57,8 @@ const gameFlow = (() => {
     const player2Input = document.querySelector('#player2');
     const player2 = document.querySelector('#player2-button');
         player2.addEventListener('click', () => {
-            const p2Name = Player(player2Input.value);
-            player2Name.textContent = p2Name.getName();
+            const p2 = Player(player2Input.value, player2Icon);
+            player2Name.textContent = p2.getName();
         });
 
 
