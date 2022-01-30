@@ -41,9 +41,24 @@ const gameFlow = (() => {
             gameBoard.clearBoard();
             gameBoard.createBoard();
         });
-        
-    const player1 = 'George';
-    const player2 = 'Jack';
+    
+    const player1Icon = 'X';
+    const player1Name = document.querySelector('#player1-name');
+    const player1Input = document.querySelector('#player1');
+    const player1 = document.querySelector('#player1-button');
+        player1.addEventListener('click', () => {
+            const p1Name = Player(player1Input.value);
+            player1Name.textContent = p1Name.getName()
+        });
+    
+    const player2Icon = 'O';
+    const player2Name = document.querySelector('#player2-name');
+    const player2Input = document.querySelector('#player2');
+    const player2 = document.querySelector('#player2-button');
+        player2.addEventListener('click', () => {
+            const p2Name = Player(player2Input.value);
+            player2Name.textContent = p2Name.getName();
+        });
 
 
     return {
